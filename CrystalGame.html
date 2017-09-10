@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crystals Collector</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!-- reset css -->
+  <style type="text/css" src="assets/css/reset.css"></style>
+  <!-- css file -->
+  <style type="text/css" src="assets/css/style.css"></style>
+</head>
+<body>
+  <!-- About The Game -->
+  <div class="container"> <!-- container -->
+    <header class="row"> <!-- Row 1 -->
+        <div class="col col-md-12"> <!-- Col 12 -->
+          <h1>Crystals Collector!</h1>
+        </div>
+    </header>
+  <!-- Gameplay -->
+    <section class="row"> <!-- Row 2 -->
+      <div class="col col-md-12"> <!-- Col 12 -->
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystsals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
+        <p>You win the game by matching your total score to a random number. You lose the game if your total score goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the value of each crystal.</p>
+      </div>
+    </section>
+  <!-- Target Number + Counters -->
+    <section class="row"> <!-- Row 3 -->
+      <div class="col col-md-6"> <!-- Col 8 -->
+        <h2>Target number: <span id="targetNumber"></span></h2>
+      </div>
+      <div class="col col-md-6"> <!-- Col 4 -->
+        <div class="container"> <!-- container -->
+          <div class="row"> <!-- Row 1 -->
+            <div class="col col-md-12"> <!-- Col 12 -->
+              <h4>Wins: <span id="winsCounter"></span></h4>
+            </div>
+          </div>
+          <div class="row"> <!-- Row 2 -->
+            <div class="col col-md-12"> <!-- Col 12 -->
+              <h4>Losses: <span id="lossesCounter"></span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- Images of Crystals -->
+    <section class="row"> <!-- Row 4 -->
+      <!-- Crystal 1 -->
+      <div class="col col-md-3"> <!-- Col 3 -->
+      </div>
+      <!-- Crystal 2 -->
+      <div class="col col-md-3"> <!-- Col 3 -->
+      </div>
+      <!-- Crystal 3 -->
+      <div class="col col-md-3"> <!-- Col 3 -->
+      </div>
+      <!-- Crystal 4 -->
+      <div class="col col-md-3"> <!-- Col 3 -->
+      </div>
+    </section>
+  <!-- Total Score -->
+    <section class="row"> <!-- Row 5 -->
+      <div class="col col-md-9"> <!-- Col 9 -->
+        <p>Your total score is:</p>
+      </div>
+      <div class="col col-md-3"> <!-- Col 3 --> <!-- empty -->
+      </div>
+    </section>
+    <section class="row"> <!-- Row 6 -->
+      <div class="col col-md-9"> <!-- Col 9 -->
+        <h2 id="totalScore"></h2>
+      </div>
+      <div class="col col-md-3"> <!-- Col 3 --> <!-- empty -->
+      </div>
+    </section>
+  <!-- JQuery  -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- JavaScript file  -->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
