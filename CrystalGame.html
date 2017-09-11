@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Crystals Collector</title>
+  <!-- reset css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <!-- reset css -->
-  <style type="text/css" src="assets/css/reset.css"></style>
   <!-- css file -->
-  <style type="text/css" src="assets/css/style.css"></style>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
   <!-- About The Game -->
@@ -49,31 +49,28 @@
   <!-- Images of Crystals -->
     <section class="row"> <!-- Row 4 -->
       <!-- Crystal 1 -->
-      <div class="col col-md-3"> <!-- Col 3 -->
-      </div>
+      <button class="col col-md-3"> <!-- Col 3 -->
+        <img class="crystal-image" id="crystal01" src="assets/images/CrystalClear01.jpg" alt="crystal">
+      </button>
       <!-- Crystal 2 -->
-      <div class="col col-md-3"> <!-- Col 3 -->
-      </div>
+      <button class="col col-md-3"> <!-- Col 3 -->
+        <img class="crystal-image" id="crystal02" src="assets/images/CrystalWhite02.jpg" alt="crystal">
+      </button>
       <!-- Crystal 3 -->
-      <div class="col col-md-3"> <!-- Col 3 -->
-      </div>
+      <button class="col col-md-3"> <!-- Col 3 -->
+        <img class="crystal-image" id="crystal03" src="assets/images/CrystalBlue03.jpg" alt="crystal">
+      </button>
       <!-- Crystal 4 -->
-      <div class="col col-md-3"> <!-- Col 3 -->
-      </div>
+      <button class="col col-md-3"> <!-- Col 3 -->
+        <img class="crystal-image" id="crystal04" src="assets/images/CrystalPurple04.jpg" alt="crystal">
+      </button>
     </section>
   <!-- Total Score -->
     <section class="row"> <!-- Row 5 -->
-      <div class="col col-md-9"> <!-- Col 9 -->
-        <p>Your total score is:</p>
+      <div class="col col-md-8"> <!-- Col 8 -->
+        <h4>Your total score: <span id="totalScore"></span></h4>
       </div>
-      <div class="col col-md-3"> <!-- Col 3 --> <!-- empty -->
-      </div>
-    </section>
-    <section class="row"> <!-- Row 6 -->
-      <div class="col col-md-9"> <!-- Col 9 -->
-        <h2 id="totalScore"></h2>
-      </div>
-      <div class="col col-md-3"> <!-- Col 3 --> <!-- empty -->
+      <div class="col col-md-4"> <!-- Col 4 -->
       </div>
     </section>
   <!-- JQuery  -->
