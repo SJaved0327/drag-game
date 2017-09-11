@@ -12,12 +12,11 @@ $("#lossesCounter").html(targetNumber);
 
 //totalScore starts at 0 and is visible in html
 var totalScore = 0;
-$("#totalScore").html(targetNumber);
+$("#totalScore").html(totalScore);
 
 //targetNumber is a random value between 19 and 120
 var targetNumber = Math.floor((Math.random() * 120) + 19);
 $("#targetNumber").html(targetNumber);
-console.log("targetNumber: " + targetNumber);
 
 //each crystal is unique and assigned a random value between 1 and 12
 //crystalValue is an object so that a random number is generated per key and stored
@@ -28,44 +27,67 @@ var crystalValue = {
   crystal04: Math.floor((Math.random() * 12) + 1)
 };
 
-//the random number generated is attached to each crystal as a data attribute
-$("#crystal01").attr("data-crystalvalue", crystalValue.crystal01);
-$("#crystal02").attr("data-crystalvalue", crystalValue.crystal02);
-$("#crystal03").attr("data-crystalvalue", crystalValue.crystal03);
-$("#crystal04").attr("data-crystalvalue", crystalValue.crystal04);
+//reset values at the top of each round
+function valuesReset(){
+  //restate crystalValue so new random numbers are generated and stored
+  crystalValue = {
+    crystal01: Math.floor((Math.random() * 12) + 1),
+    crystal02: Math.floor((Math.random() * 12) + 1),
+    crystal03: Math.floor((Math.random() * 12) + 1),
+    crystal04: Math.floor((Math.random() * 12) + 1)
+  };
+  //assign newly-generated value to crystals as data attributes
+  $("#crystal01").attr("data-crystalvalue", crystalValue.crystal01);
+  $("#crystal02").attr("data-crystalvalue", crystalValue.crystal02);
+  $("#crystal03").attr("data-crystalvalue", crystalValue.crystal03);
+  $("#crystal04").attr("data-crystalvalue", crystalValue.crystal04);
+  //reset targetNumber to a random number and print to page
+  targetNumber = Math.floor((Math.random() * 120) + 19);
+  $("#targetNumber").html(targetNumber);
+  //reset total score to 0 and print to page
+  totalScore = 0;
+  $("#totalScore").html(totalScore);
+};
 
-console.log("crystal01: " + crystalValue.crystal01);
-console.log("crystal01: " + crystalValue.crystal02);
-console.log("crystal01: " + crystalValue.crystal03);
-console.log("crystal01: " + crystalValue.crystal04);
+$("document").ready(function() {
+  //when page loads, call function to reset all values
+  valuesReset();
 
-// This time, our click event applies to every single crystal on the page. Not just one.
-$(".crystal-image").on("click", function() {
+  console.log("crystal01: " + crystalValue.crystal01);
+  console.log("crystal02: " + crystalValue.crystal02);
+  console.log("crystal03: " + crystalValue.crystal03);
+  console.log("crystal04: " + crystalValue.crystal04);
 
-    // Determining the crystal's value requires us to extract the value from the data attribute.
-    // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-    // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-    // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
-    
-    var crystalValue = ($(this).attr("data-crystalvalue"));
-    crystalValue = parseInt(crystalValue);
-    console.log(crystalValue);
-    // We then add the crystalValue to the user's "counter" which is a global variable.
-    // Every click, from every crystal adds to the global counter.
-    //new score prints to html
-    totalScore += crystalValue;
-    $("#totalScore").html(totalScore);
-    
-    if (totalScore === targetNumber) {
-      winsCounter++;
-      $("#winsCounter").html(winsCounter);
-    }
+  //establish click event for all crystals
+  $(".crystal-image").on("click", function() {
 
-    else if (totalScore >= targetNumber) {
-      lossesCounter++;
-      $("#lossesCounter").html(lossesCounter);
-    }
+      //pull crystalValue from data attribute assigned to each crystal (from the object)
+      //convert string attribute to integer
+      var crystalValue = ($(this).attr("data-crystalvalue"));
+      crystalValue = parseInt(crystalValue);
+      //every time crystals are clicked, their value is added to totalScore
+      totalScore += crystalValue;
+      $("#totalScore").html(totalScore);
+      //if totalScore is equal to targetNumber:
+      if (totalScore === targetNumber) {
+        //winsCount increases by 1 and stores its value
+        winsCounter++;
+        //winsCount prints to page
+        $("#winsCounter").html(winsCounter);
+        //game starts from the top and values are reset
+        valuesReset();
+      }
+      //if totalScore is greater than targetNumber:
+      else if (totalScore >= targetNumber) {
+        //lossesCounter decreases by one and stores value
+        lossesCounter++;
+        //lossesCounter prints to page
+        $("#lossesCounter").html(lossesCounter);
+        //game starts from the top and values are reset
+        valuesReset();
+      }
+
+  });
 
 });
-
 
