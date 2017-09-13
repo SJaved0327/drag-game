@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Crystals Collector</title>
+  <title>#werk</title>
   <!-- reset css -->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <!-- css file -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Arimo|Lobster" rel="stylesheet">
 </head>
 <body>
   <!-- About The Game -->
   <div class="container"> <!-- container -->
     <header class="row"> <!-- Row 1 -->
         <div class="col col-md-12"> <!-- Col 12 -->
-          <h1>Crystals Collector!</h1>
+          <br>
+          <h1>Covergirl, it's time to werk!</h1>
+          <br>
         </div>
     </header>
   <!-- Gameplay -->
     <section class="row"> <!-- Row 2 -->
       <div class="col col-md-12"> <!-- Col 12 -->
-        <p>You will be given a random number at the start of the game.</p>
-        <p>There are four crystsals below. By clicking on a crystal, you will add a specific amount of points to your total score.</p>
-        <p>You win the game by matching your total score to a random number. You lose the game if your total score goes above the random number.</p>
-        <p>The value of each crystal is hidden from you until you click on it.</p>
-        <p>Each time when the game starts, the game will change the value of each crystal.</p>
+        <p>There are four style items below. By clicking on a style item, you will add drag points to your total score. But be careful, honey: Each style item contains a hidden amount of drag points.</p>
+        <p>When your total score matches the drag points needed, you complete your look. If you add too many drag points, the judges will read you to filth.</p>
+        <p>Good luck, and don't f*ck it up!</p>
       </div>
     </section>
   <!-- Target Number + Counters -->
     <section class="row"> <!-- Row 3 -->
       <div class="col col-md-6"> <!-- Col 8 -->
-        <h2>Target number: <span id="targetNumber"></span></h2>
+        <h2>Drag points needed: <span id="targetNumber"></span></h2>
       </div>
       <div class="col col-md-6"> <!-- Col 4 -->
         <div class="container"> <!-- container -->
           <div class="row"> <!-- Row 1 -->
             <div class="col col-md-12"> <!-- Col 12 -->
-              <h4>Wins: <span id="winsCounter"></span></h4>
+              <h2>Your total score: <span id="totalScore"></span></h2>
             </div>
           </div>
           <div class="row"> <!-- Row 2 -->
             <div class="col col-md-12"> <!-- Col 12 -->
-              <h4>Losses: <span id="lossesCounter"></span></h4>
+              <!--<h4>Wins: <span id="winsCounter"></span></h4>-->
+              <h4>
+                Wins  <span class="badge badge-info" id="winsCounter"></span>
+              </h4>
+            </div>
+          </div>
+          <div class="row"> <!-- Row 3 -->
+            <div class="col col-md-12"> <!-- Col 12 -->
+              <h4>
+                Losses  <span class="badge badge-secondary" id="lossesCounter"></span>
+              </h4>
             </div>
           </div>
         </div>
       </div>
   <!-- Images of Crystals -->
-    <section class="row"> <!-- Row 4 -->
+    <section class="row" id="crystal-row"> <!-- Row 4 -->
       <!-- Crystal 1 -->
-      <button class="col col-md-3"> <!-- Col 3 -->
-        <img class="crystal-image" id="crystal01" src="assets/images/CrystalClear01.jpg" alt="crystal">
+      <button>
+        <img class="crystal-image" id="crystal01" src="assets/images/lipstick.jpg" alt="crystal">
       </button>
       <!-- Crystal 2 -->
-      <button class="col col-md-3"> <!-- Col 3 -->
-        <img class="crystal-image" id="crystal02" src="assets/images/CrystalWhite02.jpg" alt="crystal">
+      <button>
+        <img class="crystal-image" id="crystal02" src="assets/images/eyelashes.jpg" alt="crystal">
       </button>
       <!-- Crystal 3 -->
-      <button class="col col-md-3"> <!-- Col 3 -->
-        <img class="crystal-image" id="crystal03" src="assets/images/CrystalBlue03.jpg" alt="crystal">
+      <button>
+        <img class="crystal-image" id="crystal03" src="assets/images/BlingItOn.gif" alt="crystal">
       </button>
       <!-- Crystal 4 -->
-      <button class="col col-md-3"> <!-- Col 3 -->
-        <img class="crystal-image" id="crystal04" src="assets/images/CrystalPurple04.jpg" alt="crystal">
+      <button>
+        <img class="crystal-image" id="crystal04" src="assets/images/crown.jpg" alt="crystal">
       </button>
-    </section>
-  <!-- Total Score -->
-    <section class="row"> <!-- Row 5 -->
-      <div class="col col-md-8"> <!-- Col 8 -->
-        <h4>Your total score: <span id="totalScore"></span></h4>
-      </div>
-      <div class="col col-md-4"> <!-- Col 4 -->
-      </div>
-    </section>
+    </section>   
+  </div>
   <!-- JQuery  -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- JavaScript file  -->

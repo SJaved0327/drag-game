@@ -1,3 +1,14 @@
+//werk audio for wins
+var audioWerk = new Audio("assets/audio/YouBetterWerk.mp3");
+
+//absolutely audio for losses
+var audioAbsolutely = new Audio("assets/audio/Absolutely.mp3");
+
+//U Wear It Well audio for background music
+var audioUWearItWell = new Audio("assets/audio/UWearItWell.mp3");
+audioUWearItWell.play();
+audioUWearItWell.volume = 0.05;
+
 //targetNumber starts at 0 and is visible in html
 var targetNumber = 0;
 $("#targetNumber").html(targetNumber);
@@ -74,6 +85,9 @@ $("document").ready(function() {
         winsCounter++;
         //winsCount prints to page
         $("#winsCounter").html(winsCounter);
+        //RuPaul's You Bette Werk plays
+        audioWerk.play();
+        audioWerk.volume = 1.0;
         //game starts from the top and values are reset
         valuesReset();
       }
@@ -83,6 +97,9 @@ $("document").ready(function() {
         lossesCounter++;
         //lossesCounter prints to page
         $("#lossesCounter").html(lossesCounter);
+        //Gia Gunn's absolutely plays
+        audioAbsolutely.play();
+        audioAbsolutely.volume = 0.5;
         //game starts from the top and values are reset
         valuesReset();
       }

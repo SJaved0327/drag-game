@@ -2,3 +2,25 @@
 	width: 200px;
 	height: 200px;
 }
+
+body {
+  font-family: 'Arimo', sans-serif;
+  background-image: url("../images/rosegoldglitter.jpg");
+}
+
+.container{
+	background-color: pink;
+}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+}
+
+#crystal-row{
+	padding: 25px 0px 50px 50px;
+}
+
+button{
+	margin:10px;
+}
